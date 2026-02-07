@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>ASCII / Unicode Art</title>
+  <link rel="icon" href="/www/sooslee_icon.ico">
+</head>
+<br>
+<style>
+      body {
+            margin: 0;
+            background: #111;
+            color: #ffffff;
+            font-family: system-ui, Arial, sans-serif;
+      }
+      
+      .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+      }
+      .img-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            width: 100%;
+            max-width: 1200px;
+      }
+      
+      .profile {
+            border-radius: 12px;
+            object-fit: cover;
+            width: 340px;
+            height: 340px;
+            float: none !important;
+            display: block;
+      }
+            .audio-row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+      }
+            @media (max-width: 900px) {
+            .profile { width: auto; height: auto; }
+      }
+      </style>
+<body>
+      <div id="main">
+            
+            <div class="img-row">
+                  <img src="GET_test1.jpg" alt="프로필 이미지1" class="profile large" />
+                  <img src="GET_test2.jpg" alt="프로필 이미지2" class="profile large" />
+                  <img src="GET_test3.jpg" alt="프로필 이미지3" class="profile large" />
+            </div>
+            <audio controls preload="metadata" src="/beat_music.mp3" type="audio/mp3">
+            </audio>
+
+</body>
+</html>

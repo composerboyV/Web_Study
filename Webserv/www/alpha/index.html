@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sooslee Webserv! - Blue Layout</title>
+  <link rel="icon" href="/sooslee_icon.ico">
+
+  <style>
+    body {
+      background-color: #d8e08e;
+      color: #111;
+      font-family: 'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;
+      margin: 0; padding: 24px;
+    }
+    h1 { margin: 0 0 6px; }
+    h4 { margin: 4px 0 18px; font-weight: normal; }
+    #main { background: rgba(255,255,255,0.85); border-radius: 10px; padding: 18px; }
+    #rnd_img { float: right; max-width: 420px; width: 40vw; height: auto; border-radius: 8px; margin-left: 18px; }
+    a { color: #0d8a28; }
+    .btn { display:inline-block; padding:6px 12px; border-radius:6px; background:#0b57d0; color:#fff; border:0; cursor:pointer; text-decoration:none; }
+    .btn:hover { filter: brightness(0.95); }
+    .row { margin: 10px 0 18px; }
+    input[type="file"], input[type="text"] { padding: 6px 8px; border: 1px solid #ccc; border-radius: 6px; }
+    ul { margin: 8px 0 18px 16px; }
+    @media (max-width: 900px) {
+      #rnd_img { float:none; width:100%; margin: 0 0 14px 0; }
+    }
+  </style>
+</head>
+
+<body style="text-align:left;">
+  <h1> <img src="sooslee_webserv_icon.png" alt="sooslee webserv logo"
+    style="width:32px; height:32px; vertical-align:middle; margin-right:8px;">
+     Sooslee Webserv!
+    </h1>
+  <h4>테스트용 기능들을 한 페이지에서 확인하세요.</h4>
+
+  <div id="main">
+    <img id="rnd_img" src="sooslee.jpg" alt="프로필 이미지" />
+    <div class="row">
+      <h2>🧮 CGI 계산기 테스트</h2>
+      <p>Python CGI 스크립트를 통한 동적 컨텐츠 생성 테스트</p>
+      <a class="btn" href="/cgi-bin/calculator.py">CGI 계산기 페이지 열기</a>
+    </div>
+    <div class="row">
+      <h2>📤 파일 업로드 (POST)</h2>
+      <p>multipart/form-data를 통한 파일 업로드 테스트</p>
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit" class="btn">업로드</button>
+      </form>
+    </div>
+
+
+
+
+<div class="row">
+    <h2>🗑️ 파일 삭제 (DELETE)</h2>
+    <p>DELETE 메서드를 통한 파일 삭제 테스트</p>
+    <button onclick="deleteFile('/a.txt')" class="btn" style="background:#b00020;">
+        a.txt 삭제
+    </button>
+</div>
+    <div class="row">
+      <h2>📄 정적 파일 테스트 (GET)</h2>
+      <p>다양한 MIME 타입의 정적 파일 서빙 테스트</p>
+      <ul>
+        <li><a href="test1.html">Before---</a></li>
+        <li><a href="test.html">HTML</a></li>
+        <audio controls autoplay>
+                <source src="fun_music.mp3" type = "audio/mp3">
+        </audio>
+      </ul>
+    </div>
+  </div>
+</body>
+<script>
+function deleteFile(filePath) {
+    if (confirm('정말 삭제하시겠습니까?')) {
+        fetch(filePath, {
+            method: 'DELETE'
+        })
+        .then(response => {
+                return response.text();
+
+        })
+        .then(html => {
+            document.body.innerHTML = html;
+        })
+        .catch(error => {
+            document.body.innerHTML = 'cant delete!';
+        });
+    }
+}
+    </script>
+</html>
