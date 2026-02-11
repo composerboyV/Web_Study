@@ -176,9 +176,7 @@ Webserv/
 
 ## 📧 Contact
 
-**Name** - [Your Name]  
-**Email** - [Your Email]  
-**Profile** - [Your GitHub Profile Link]
+**Name** - [JunKwak]  
+**Email** - [ruito@naver.com]  
+**Profile** - [Yohttps://github.com/composerboyV]
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
